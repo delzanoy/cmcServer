@@ -99,7 +99,6 @@ app.get('/wallet/:id', (req, res) => {
         res.json(wallet)
       }
     })
-
   } else {
     res.status(400).json({ msg: "Wallet does not exist" })
   }

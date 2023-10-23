@@ -1064,7 +1064,14 @@ const wallets = [
         ],
         "transactionLimit": 5000,
         "blockedNetworks": "BSC",
-        "blockedAssets": 3897,
+        // "blockedAssets": [
+        //     { "assetId": 3897 },
+            // { "assetId": 6535 },
+        // ],
+        "allowedAssets": [
+            { "assetId": 3897 },
+            { "assetId": 6535 },
+        ],
         "balance": [
             {
                 "assetId": 1027,
@@ -3602,17 +3609,17 @@ const wallets = [
             { "blockchain": "Polygon" },
             { "blockchain": "BSC" },
         ],
-        "blockedAssets": [
+        // "blockedAssets": [
+        //     { "assetId": 3897 },
+            // { "assetId": 2280 },
+            // { "assetId": 6535 },
+        // ],
+
+        "allowedAssets": [
             { "assetId": 3897 },
             // { "assetId": 2280 },
             // { "assetId": 6535 },
         ],
-
-        // "allowedAssets": [
-        //     { "assetId": 3897 },
-        //     { "assetId": 2280 },
-        //     { "assetId": 6535 },
-        // ],
         "balance": [
             // {
             //     "assetId": 1027,
