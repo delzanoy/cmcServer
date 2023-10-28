@@ -61,10 +61,10 @@ app.get('/workspaces', (req, res) => {
 })
 
 app.get('/members', (req, res) => {
-  if (parseInt(req.query.wallet) > 0) {
+  if (parseFloat(req.query.wallet) > 0) {
     let tempMembers = []
     wallets.forEach(wallet => {
-      if (parseInt(req.query.wallet) === wallet.id) {
+      if (parseFloat(req.query.wallet) === wallet.id) {
         wallet.members.forEach(walletMember => {
           members.forEach(member => {
             if (member.id === walletMember.memberId) {
@@ -93,9 +93,9 @@ app.get('/wallets', (req, res) => {
 
 
 app.get('/wallet/:id', (req, res) => {
-  if (wallets.some(e => e.id === parseInt(req.params.id))) {
+  if (wallets.some(e => e.id === parseFloat(req.params.id))) {
     wallets.find(wallet => {
-      if (wallet.id === parseInt(req.params.id)) {
+      if (wallet.id === parseFloat(req.params.id)) {
         res.json(wallet)
       }
     })
@@ -106,7 +106,7 @@ app.get('/wallet/:id', (req, res) => {
 
 
 app.get('/assets', (req, res) => {
-  if (parseInt(req.query.walletId) >= 0) {
+  if (parseFloat(req.query.walletId) >= 0) {
     // Create an object to store the assets for each assetId and blockchain.
     const assets = [];
 
@@ -118,7 +118,7 @@ app.get('/assets', (req, res) => {
 
     wallets.forEach(wallet => {
       // Iterate over all assets in the wallet.
-      if (wallet.id === parseInt(req.query.walletId)) {
+      if (wallet.id === parseFloat(req.query.walletId)) {
         wallet.balance.forEach(asset => {
           // Get the assetId and blockchain.
           const assetId = asset.assetId;
@@ -275,7 +275,7 @@ app.get('/assets', (req, res) => {
 
 
 app.get('/assets/:id', (req, res) => {
-  if (parseInt(req.params.id) > 0) {
+  if (parseFloat(req.params.id) > 0) {
 
   }
 })
@@ -296,13 +296,13 @@ app.get('/assets/:id', (req, res) => {
 
 
 app.get('/transactions', (req, res) => {
-  if (parseInt(req.query.page) >= 0) {
-    if (parseInt(req.query.walletId) > 0) {
+  if (parseFloat(req.query.page) >= 0) {
+    if (parseFloat(req.query.walletId) > 0) {
       let transactionsList = []
       wallets.forEach(wallet => {
         if (Object.keys(wallet.transactions).length > 0) {
           wallet.transactions.forEach(transaction => {
-            if (wallet.id === parseInt(req.query.walletId)) {
+            if (wallet.id === parseFloat(req.query.walletId)) {
               let transactionTemp = {
                 id: transaction.transactionId,
                 timestamp: transaction.timestamp,
@@ -316,18 +316,18 @@ app.get('/transactions', (req, res) => {
                 blockchain: transaction.blockchain,
                 multiRecipient: Array.isArray(transaction.toAddress),
                 recipents: transaction.toAddress,
-                inTokens: transaction.hasOwnProperty("inAssetId") ? parseInt(transaction.inTokens) : null,
-                outTokens: transaction.hasOwnProperty("outAssetId") ? parseInt(transaction.outTokens) : null,
+                inTokens: transaction.hasOwnProperty("inAssetId") ? parseFloat(transaction.inTokens) : null,
+                outTokens: transaction.hasOwnProperty("outAssetId") ? parseFloat(transaction.outTokens) : null,
                 classification: transaction.classification,
               }
               cryptocurrencies.forEach(crypto => {
                 if (crypto.id === transaction.outAssetId) {
                   transactionTemp.outTokenSymbol = crypto.symbol
-                  transactionTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                  transactionTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
                 }
                 if (crypto.id === transaction.inAssetId) {
                   transactionTemp.inTokenSymbol = crypto.symbol
-                  transactionTemp.inUSDPrice = parseInt(crypto.quote.USD.price)
+                  transactionTemp.inUSDPrice = parseFloat(crypto.quote.USD.price)
                 }
                 members.forEach(member => {
                   if (member.id === transaction.initiator) {
@@ -348,7 +348,7 @@ app.get('/transactions', (req, res) => {
         return y.timestamp - x.timestamp;
       })
 
-      const currentPage = parseInt(req.query.page)
+      const currentPage = parseFloat(req.query.page)
       const transactionsPerPage = 25
       const lastIndex = (currentPage + 1) * transactionsPerPage
       const firstIndex = lastIndex - transactionsPerPage
@@ -385,18 +385,18 @@ app.get('/transactions', (req, res) => {
               blockchain: transaction.blockchain,
               multiRecipient: Array.isArray(transaction.toAddress),
               recipents: transaction.toAddress,
-              inTokens: transaction.hasOwnProperty("inAssetId") ? parseInt(transaction.inTokens) : null,
-              outTokens: transaction.hasOwnProperty("outAssetId") ? parseInt(transaction.outTokens) : null,
+              inTokens: transaction.hasOwnProperty("inAssetId") ? parseFloat(transaction.inTokens) : null,
+              outTokens: transaction.hasOwnProperty("outAssetId") ? parseFloat(transaction.outTokens) : null,
               classification: transaction.classification,
             }
             cryptocurrencies.forEach(crypto => {
               if (crypto.id === transaction.outAssetId) {
                 transactionTemp.outTokenSymbol = crypto.symbol
-                transactionTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                transactionTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
               }
               if (crypto.id === transaction.inAssetId) {
                 transactionTemp.inTokenSymbol = crypto.symbol
-                transactionTemp.inUSDPrice = parseInt(crypto.quote.USD.price)
+                transactionTemp.inUSDPrice = parseFloat(crypto.quote.USD.price)
               }
               members.forEach(member => {
                 if (member.id === transaction.initiator) {
@@ -416,7 +416,7 @@ app.get('/transactions', (req, res) => {
       let newList = transactionsList.sort(function (x, y) {
         return y.timestamp - x.timestamp;
       })
-      const currentPage = parseInt(req.query.page)
+      const currentPage = parseFloat(req.query.page)
       const transactionsPerPage = 25
       const lastIndex = (currentPage + 1) * transactionsPerPage
       const firstIndex = lastIndex - transactionsPerPage
@@ -442,13 +442,13 @@ app.get('/transactions', (req, res) => {
 })
 
 app.get('/transactions/:id', (req, res) => {
-  if (parseInt(req.query.page) >= 0) {
+  if (parseFloat(req.query.page) >= 0) {
     let transactionsList = []
     wallets.forEach(wallet => {
 
       if (Object.keys(wallet.transactions).length > 0) {
         wallet.transactions.forEach(transaction => {
-          if (transaction.id === parseInt(req.params.id)) {
+          if (transaction.id === parseFloat(req.params.id)) {
             let transactionTemp = {
               id: transaction.transactionId,
               timestamp: transaction.timestamp,
@@ -462,18 +462,18 @@ app.get('/transactions/:id', (req, res) => {
               blockchain: transaction.blockchain,
               multiRecipient: Array.isArray(transaction.toAddress),
               recipents: transaction.toAddress,
-              inTokens: transaction.hasOwnProperty("inAssetId") ? parseInt(transaction.inTokens) : null,
-              outTokens: transaction.hasOwnProperty("outAssetId") ? parseInt(transaction.outTokens) : null,
+              inTokens: transaction.hasOwnProperty("inAssetId") ? parseFloat(transaction.inTokens) : null,
+              outTokens: transaction.hasOwnProperty("outAssetId") ? parseFloat(transaction.outTokens) : null,
               classification: transaction.classification,
             }
             cryptocurrencies.forEach(crypto => {
               if (crypto.id === transaction.outAssetId) {
                 transactionTemp.outTokenSymbol = crypto.symbol
-                transactionTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                transactionTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
               }
               if (crypto.id === transaction.inAssetId) {
                 transactionTemp.inTokenSymbol = crypto.symbol
-                transactionTemp.inUSDPrice = parseInt(crypto.quote.USD.price)
+                transactionTemp.inUSDPrice = parseFloat(crypto.quote.USD.price)
               }
               members.forEach(member => {
                 if (member.id === transaction.initiator) {
@@ -495,7 +495,7 @@ app.get('/transactions/:id', (req, res) => {
       return y.timestamp - x.timestamp;
     })
 
-    const currentPage = parseInt(req.query.page)
+    const currentPage = parseFloat(req.query.page)
     const transactionsPerPage = 25
     const lastIndex = (currentPage + 1) * transactionsPerPage
     const firstIndex = lastIndex - transactionsPerPage
@@ -522,9 +522,9 @@ app.get('/transactions/:id', (req, res) => {
 app.get('/proposals/needs-approval', (req, res) => {
   let needsApproval = []
   wallets.forEach(wallet => {
-    if (parseInt(req.query.walletId) >= 0) {
+    if (parseFloat(req.query.walletId) >= 0) {
 
-      if (parseInt(req.query.walletId) === wallet.id) {
+      if (parseFloat(req.query.walletId) === wallet.id) {
 
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
@@ -548,7 +548,7 @@ app.get('/proposals/needs-approval', (req, res) => {
               cryptocurrencies.forEach(crypto => {
                 if (crypto.id === proposal.outAssetId) {
                   proposalTemp.outTokenSymbol = crypto.symbol
-                  proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                  proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
                 }
               })
               members.forEach(member => {
@@ -584,7 +584,7 @@ app.get('/proposals/needs-approval', (req, res) => {
             cryptocurrencies.forEach(crypto => {
               if (crypto.id === proposal.outAssetId) {
                 proposalTemp.outTokenSymbol = crypto.symbol
-                proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
               }
             })
             members.forEach(member => {
@@ -606,7 +606,7 @@ app.get('/proposals/needs-approval', (req, res) => {
     return y.timestamp - x.timestamp;
   })
 
-  const currentPage = parseInt(req.query.page) || 0
+  const currentPage = parseFloat(req.query.page) || 0
   const needsApprovalPerPage = 25
   const lastIndex = (currentPage + 1) * needsApprovalPerPage
   const firstIndex = lastIndex - needsApprovalPerPage
@@ -635,9 +635,9 @@ app.get('/proposals/needs-approval', (req, res) => {
 app.get('/proposals/ready-to-execute', (req, res) => {
   let readyToExecute = []
   wallets.forEach(wallet => {
-    if (parseInt(req.query.walletId) >= 0) {
+    if (parseFloat(req.query.walletId) >= 0) {
 
-      if (parseInt(req.query.walletId) === wallet.id) {
+      if (parseFloat(req.query.walletId) === wallet.id) {
 
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
@@ -661,7 +661,7 @@ app.get('/proposals/ready-to-execute', (req, res) => {
               cryptocurrencies.forEach(crypto => {
                 if (crypto.id === proposal.outAssetId) {
                   proposalTemp.outTokenSymbol = crypto.symbol
-                  proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                  proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
                 }
               })
               members.forEach(member => {
@@ -698,7 +698,7 @@ app.get('/proposals/ready-to-execute', (req, res) => {
             cryptocurrencies.forEach(crypto => {
               if (crypto.id === proposal.outAssetId) {
                 proposalTemp.outTokenSymbol = crypto.symbol
-                proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
               }
             })
             members.forEach(member => {
@@ -718,7 +718,7 @@ app.get('/proposals/ready-to-execute', (req, res) => {
     return y.timestamp - x.timestamp;
   })
 
-  const currentPage = parseInt(req.query.page)
+  const currentPage = parseFloat(req.query.page)
   const readyToExecutePerPage = 25
   const lastIndex = (currentPage + 1) * readyToExecutePerPage
   const firstIndex = lastIndex - readyToExecutePerPage
@@ -746,9 +746,9 @@ app.get('/proposals/discarded', (req, res) => {
 
   let discarded = []
   wallets.forEach(wallet => {
-    if (parseInt(req.query.walletId) >= 0) {
+    if (parseFloat(req.query.walletId) >= 0) {
 
-      if (parseInt(req.query.walletId) === wallet.id) {
+      if (parseFloat(req.query.walletId) === wallet.id) {
 
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
@@ -772,7 +772,7 @@ app.get('/proposals/discarded', (req, res) => {
               cryptocurrencies.forEach(crypto => {
                 if (crypto.id === proposal.outAssetId) {
                   proposalTemp.outTokenSymbol = crypto.symbol
-                  proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                  proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
                 }
               })
               members.forEach(member => {
@@ -809,7 +809,7 @@ app.get('/proposals/discarded', (req, res) => {
             cryptocurrencies.forEach(crypto => {
               if (crypto.id === proposal.outAssetId) {
                 proposalTemp.outTokenSymbol = crypto.symbol
-                proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
               }
             })
             members.forEach(member => {
@@ -829,7 +829,7 @@ app.get('/proposals/discarded', (req, res) => {
     return y.timestamp - x.timestamp;
   })
 
-  const currentPage = parseInt(req.query.page)
+  const currentPage = parseFloat(req.query.page)
   const discardedPerPage = 25
   const lastIndex = (currentPage + 1) * discardedPerPage
   const firstIndex = lastIndex - discardedPerPage
@@ -855,7 +855,7 @@ app.get('/proposals/discarded', (req, res) => {
 
 
 app.get('/proposals', (req, res) => {
-  if (parseInt(req.query.wallet) > 0) {
+  if (parseFloat(req.query.wallet) > 0) {
     let needsApproval = []
     let readyToExecute = []
     let discarded = []
@@ -863,7 +863,7 @@ app.get('/proposals', (req, res) => {
 
 
     wallets.forEach(wallet => {
-      if (wallet.id === parseInt(req.query.wallet)) {
+      if (wallet.id === parseFloat(req.query.wallet)) {
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
             let proposalTemp = {
@@ -884,7 +884,7 @@ app.get('/proposals', (req, res) => {
             cryptocurrencies.forEach(crypto => {
               if (crypto.id === proposal.outAssetId) {
                 proposalTemp.outTokenSymbol = crypto.symbol
-                proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+                proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
               }
             })
             members.forEach(member => {
@@ -959,7 +959,7 @@ app.get('/proposals', (req, res) => {
         cryptocurrencies.forEach(crypto => {
           if (crypto.id === proposal.outAssetId) {
             proposalTemp.outTokenSymbol = crypto.symbol
-            proposalTemp.outUSDPrice = parseInt(crypto.quote.USD.price)
+            proposalTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
           }
         })
         members.forEach(member => {
