@@ -111,7 +111,7 @@ const wallets = [
                 "tokens": 92.33,
             },
             {
-                "assetId": 3408,
+                "assetId": 11419,
                 "tokens": 29.34,
             },
             {
@@ -127,7 +127,7 @@ const wallets = [
                 "tokens": 936.17516,
             },
             {
-                "assetId": 3890,
+                "assetId": 52,
                 "tokens": 751875.2175,
             },
             {
@@ -159,7 +159,7 @@ const wallets = [
             {
                 "transactionId": "0x28443d391cf2b4ba2f5df60e0686fbfeb1274049ffa7dc180adf959d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 825,
                 "outTokens": 0.01,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -179,7 +179,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339f55f1581001c010db22381aab6426cd4fevdd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 15.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -209,7 +209,7 @@ const wallets = [
             {
                 "transactionId": "0x588c251608c6c03f4d05401056637ab47971de953b32b626c14b3dffb4952d67",
                 "timestamp": 1682120534215,
-                "inAssetId": 825,
+                "inAssetId": 52,
                 "inTokens": 517.9999,
                 // "walletId": 3,
                 "blockchain": "Solana",
@@ -273,7 +273,7 @@ const wallets = [
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60p0686fbf1s9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1695802080696,
-                "outAssetId": 5426,
+                "outAssetId": 52,
                 "outTokens": 1.291,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -309,7 +309,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55raj81001c010db22381aab64261d4848d4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 24.50,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -354,7 +354,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515afmare339f55f1581501c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695661680696,
-                "outAssetId": 1839,
+                "outAssetId": 825,
                 "outTokens": 11.29,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -398,7 +398,7 @@ const wallets = [
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0681fbf1s9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1695802080696,
-                "outAssetId": 5426,
+                "outAssetId": 52,
                 "outTokens": 2301.15,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -525,7 +525,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f1581001c010db21381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 42.1101,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -555,7 +555,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515afmare338f55f1581001c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695661680696,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 20.001,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -587,7 +587,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e334f55f1581001c010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 825,
                 "outTokens": 100,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -647,7 +647,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339455raj81001c010db22381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 82.75,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -737,7 +737,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55raj81601c010db22381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 100.34,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -782,7 +782,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515afmare339f55f1581031c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695661680696,
-                "outAssetId": 1839,
+                "outAssetId": 825,
                 "outTokens": 12.34,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -814,7 +814,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f1581001c010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 715.12,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -970,7 +970,7 @@ const wallets = [
                 "timestamp": 1695301734215,
                 "outAssetId": 4943,
                 "outTokens": 5031.93,
-                "inAssetId": 1839,
+                "inAssetId": 52,
                 "inTokens": 530.10,
                 // "walletId": 3,
                 "blockchain": "Solana",
@@ -1033,7 +1033,7 @@ const wallets = [
                 "timestamp": 1695802734215,
                 "outAssetId": 4943,
                 "outTokens": 61.21,
-                "inAssetId": 1839,
+                "inAssetId": 1437,
                 "inTokens": 1.02301231,
                 // "walletId": 3,
                 "blockchain": "Solana",
@@ -1071,7 +1071,7 @@ const wallets = [
                 "timestamp": 1694199183891,
                 "outAssetId": 4943,
                 "outTokens": 34.55,
-                "inAssetId": 1839,
+                "inAssetId": 52,
                 "inTokens": 1,
                 // "walletId": 3,
                 "blockchain": "Solana",
@@ -1083,7 +1083,7 @@ const wallets = [
                 "timestamp": 1694040359891,
                 "outAssetId": 4943,
                 "outTokens": 952.03,
-                "inAssetId": 1839,
+                "inAssetId": 1437,
                 "inTokens": 1,
                 // "walletId": 3,
                 "blockchain": "Solana",
@@ -1138,7 +1138,7 @@ const wallets = [
                 "tokens": 34.16726,
             },
             {
-                "assetId": 1839,
+                "assetId": 1437,
                 "tokens": 46.175,
             },
             {
@@ -1200,7 +1200,7 @@ const wallets = [
             {
                 "transactionId": "0x588c257528c6c03f4d054010cbx37an120s4de953b323626c14b3dffb4952d67",
                 "timestamp": 168393587411,
-                "outAssetId": 3408,
+                "outAssetId": 825,
                 "outTokens": 743910,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -1250,7 +1250,7 @@ const wallets = [
             {
                 "transactionId": "0x28443d391cf2b4ba2f5df6088886fbfeb9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 91.29,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1268,7 +1268,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f7771001c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -1362,7 +1362,7 @@ const wallets = [
             {
                 "transactionId": "0x284z3d391cf2b4ba2f5df60eaz35fbfeb9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 825,
                 "outTokens": 99.99,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1400,7 +1400,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -1475,7 +1475,7 @@ const wallets = [
             {
                 "transactionId": "0x28443d391cf2b4ba2f5df6088886fbfeb9774049ffa7dc180adf95c431deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 50.50,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1549,7 +1549,7 @@ const wallets = [
             {
                 "transactionId": "0x588c257528c6c03f4d05401056637ab352304d7953b312426c14b3dffb4952d67",
                 "timestamp": 1688891080696,
-                "inAssetId": 6636,
+                "inAssetId": 825,
                 "inTokens": 601.30,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1587,7 +1587,7 @@ const wallets = [
             {
                 "transactionId": "0x28443d391cf2b4ba2fasf60eaz35fbfeb9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 910.21,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1605,7 +1605,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f1vzs3c01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -1687,7 +1687,7 @@ const wallets = [
             {
                 "transactionId": "0x588c257528c6c03f4d05401951317ab51120de953b32b626c14b3dffb4952d67",
                 "timestamp": 1684040359891,
-                "inAssetId": 11419,
+                "inAssetId": 825,
                 "inTokens": 251.91213,
                 // "walletId": 3,
                 "blockchain": "Solana",
@@ -1699,7 +1699,7 @@ const wallets = [
             {
                 "transactionId": "0x28443d391cf2b4ba2f5df60cz86fbfeb9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 33.90,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1735,7 +1735,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -1809,7 +1809,7 @@ const wallets = [
             {
                 "transactionId": "0x284z3d391cf2b4ba2f5df60eaz35fbfzb9774049ffa7dc180adf959d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 155.02,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -1842,7 +1842,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -1931,7 +1931,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f7r4s1001cz10db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2028,7 +2028,7 @@ const wallets = [
             {
                 "transactionId": "0x28443d391cf2b4ba2f5df60eaz35fbfeb9774049ffa7dc180avs45d31deafec",
                 "timestamp": 1694040359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 34.62,
                 // "walletId": 3,
                 "blockchain": "Ethereum",
@@ -2048,7 +2048,7 @@ const wallets = [
             {
                 "transactionId": "0x1235d515af07e339apr5f1513c01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 825,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2070,7 +2070,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2164,7 +2164,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f75hyy1001c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2184,7 +2184,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2276,7 +2276,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5zcv153c01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2297,7 +2297,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2389,7 +2389,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f7r4s1001c010db22381aab6426cd484v2d4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2409,7 +2409,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2501,7 +2501,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339aprv321vzs3c01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2521,7 +2521,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2613,7 +2613,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f371001c010db22381aab6426cc3144dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2725,7 +2725,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5zc3513c01c0dca3dm22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2743,7 +2743,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2837,7 +2837,7 @@ const wallets = [
             {
                 "transactionId": "0x188b6515af07e339apr5f7r4s10cdcz10db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1685120359891,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 500.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2857,7 +2857,7 @@ const wallets = [
                 "timestamp": 1684937653722,
                 "inAssetId": 1027,
                 "inTokens": 64000.00,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 9999.99,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2954,7 +2954,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695691680696,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 819.53,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -2988,7 +2988,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15810de1c010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 35.9100013,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3081,7 +3081,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda0db22381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 505.0001,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3136,7 +3136,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db66681aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695661680696,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 52.86,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3170,7 +3170,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15810dect010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 87.200065,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3215,7 +3215,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f14664a01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695661680696,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 791.20,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3249,7 +3249,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15810d6cc010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 653.7823,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3285,7 +3285,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010dbc3a81aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695667680696,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 350.110,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3319,7 +3319,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15810decc010db22581aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 35.0009,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3355,7 +3355,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db22381aab6426cd484aed4c09246ce84",
                 "timestamp": 1695631680696,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 42.001,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3373,7 +3373,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515fv931e339f55f1581001sda0db22381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 34.856,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3442,7 +3442,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f158zx93esda0db22381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 63.75003,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3458,7 +3458,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f15810decc010db22381zab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 55.0075,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3492,7 +3492,7 @@ const wallets = [
             {
                 "proposalId": "0x13bb6515af07e339f55f15sda01c010db22381aab6426cd484dd4cc09246ce84",
                 "timestamp": 1695441680696,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 760.928005,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3510,7 +3510,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f158vx94sda0db22381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 23.901,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3526,7 +3526,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af05e339f55f15810decc010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 52,
                 "outTokens": 68.192,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3578,7 +3578,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda1230x2381aab64261d484dd4cc09246ce84",
                 "timestamp": 1695544533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 243.005,
                 // "walletId": 3,
                 "blockchain": "Polygon",
@@ -3594,7 +3594,7 @@ const wallets = [
             {
                 "proposalId": "0x188b6515af07e339f55r15810decc010db22381aab642611244dd4cc09246ce84",
                 "timestamp": 1695111533722,
-                "outAssetId": 1839,
+                "outAssetId": 1437,
                 "outTokens": 23.9991,
                 // "walletId": 3,
                 "blockchain": "Polygon",
