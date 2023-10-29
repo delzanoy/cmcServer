@@ -15,7 +15,7 @@ const addresses = [
     },
     {
         "id": 2,
-        "name": "Bob the builder",
+        "name": "Zhao Yan",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "verified": true,
@@ -35,7 +35,7 @@ const addresses = [
     },
     {
         "id": 4,
-        "name": "Maria",
+        "name": "Christy Walton",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "verified": false,
@@ -45,7 +45,7 @@ const addresses = [
     },
     {
         "id": 5,
-        "name": "Pablo Escobar",
+        "name": "Diane Hendricks",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -54,7 +54,7 @@ const addresses = [
     },
     {
         "id": 6,
-        "name": "Aha",
+        "name": "Blair Parry-Okeden",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -68,7 +68,7 @@ const addresses = [
 
     {
         "id": 7,
-        "name": "Delanoy Kunil",
+        "name": "Nancy Walton Laurie",
         "walletHash": "0x0688bd1b30b41ff244094b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -80,7 +80,7 @@ const addresses = [
     },
     {
         "id": 8,
-        "name": "Bob the builder",
+        "name": "Zeng Fangquin",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -91,7 +91,7 @@ const addresses = [
     },
     {
         "id": 9,
-        "name": "Vladmir Putin",
+        "name": "Cheng Xue",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "verified": false,
@@ -111,7 +111,7 @@ const addresses = [
     },
     {
         "id": 11,
-        "name": "Pablo Escobar",
+        "name": "Ann Walton Kroenke",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -122,7 +122,7 @@ const addresses = [
     },
     {
         "id": 12,
-        "name": "Aha",
+        "name": "Denise Coates",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -147,7 +147,7 @@ const addresses = [
     },
     {
         "id": 14,
-        "name": "Bob the builder",
+        "name": "Massimiliana Landini Alleotti",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -158,7 +158,7 @@ const addresses = [
     },
     {
         "id": 15,
-        "name": "Vladmir Putin",
+        "name": "Kwong Siu-hing",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -169,7 +169,7 @@ const addresses = [
     },
     {
         "id": 16,
-        "name": "Maria",
+        "name": "Wang Laichun",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -190,7 +190,7 @@ const addresses = [
     },
     {
         "id": 18,
-        "name": "Aha",
+        "name": "Kirsten Rausing",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -199,12 +199,9 @@ const addresses = [
             {"groupId": 1,}
         ]
     },
-
-
-
     {
         "id": 19,
-        "name": "Delanoy Kunil",
+        "name": "Abigail Johnson",
         "walletHash": "0x0688bd1b30b41ff244094b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -216,7 +213,7 @@ const addresses = [
     },
     {
         "id": 20,
-        "name": "Bob the builder",
+        "name": "Charlene de Carvalho-Heineken",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -238,7 +235,7 @@ const addresses = [
     },
     {
         "id": 22,
-        "name": "Maria",
+        "name": "Iris Fontbona ",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -249,7 +246,7 @@ const addresses = [
     },
     {
         "id": 23,
-        "name": "Pablo Escobar",
+        "name": "Gina Rinehart",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -260,7 +257,7 @@ const addresses = [
     },
     {
         "id": 24,
-        "name": "Aha",
+        "name": "Lu Zhongfang",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -272,7 +269,7 @@ const addresses = [
 
     {
         "id": 25,
-        "name": "Delanoy Kunil",
+        "name": "Zhong Huijuan",
         "walletHash": "0x0688bd1b30b41ff244094b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -284,7 +281,7 @@ const addresses = [
     },
     {
         "id": 26,
-        "name": "Bob the builder",
+        "name": "Laurene Powell Jobs",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -295,7 +292,7 @@ const addresses = [
     },
     {
         "id": 27,
-        "name": "Vladmir Putin",
+        "name": "Susanne Klatten",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -306,7 +303,7 @@ const addresses = [
     },
     {
         "id": 28,
-        "name": "Maria",
+        "name": "Jacqueline Mars",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -317,7 +314,7 @@ const addresses = [
     },
     {
         "id": 29,
-        "name": "Pablo Escobar",
+        "name": "Yang Huiyan",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
@@ -328,7 +325,7 @@ const addresses = [
     },
     {
         "id": 30,
-        "name": "Aha",
+        "name": "Julia Koch",
         "walletHash": "0x0688bd1b30b41ff24409454ad7068b5da459e2ed",
         "created": 1694040359891,
         "lastInteracted": 1694940359891,
