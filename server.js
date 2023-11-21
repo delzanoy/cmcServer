@@ -309,11 +309,10 @@ app.get('/balance/:id', (req, res) => {
             proposed = 0;
           }
         })
-        // console.log(total)
-        res.json({balance: {
+        res.json({
           total: total,
           proposed: proposed,
-        }})
+        })
       }
     })
   } else {
