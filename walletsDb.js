@@ -1143,19 +1143,19 @@ const wallets = [
         "balance": [
             {
                 "assetId": 1027,
-                "tokens": 34.16726,
+                "tokens": 338.16726,
             },
             {
                 "assetId": 1437,
-                "tokens": 46.175,
+                "tokens": 461.175,
             },
             {
                 "assetId": 825,
-                "tokens": 9642.3123,
+                "tokens": 10642.3123,
             },
             {
                 "assetId": 3408,
-                "tokens": 563.5734,
+                "tokens": 963.5734,
             },
             {
                 "assetId": 5426,
@@ -1163,11 +1163,11 @@ const wallets = [
             },
             {
                 "assetId": 7083,
-                "tokens": 675.1964,
+                "tokens": 975.1964,
             },
             {
                 "assetId": 5805,
-                "tokens": 936.17516,
+                "tokens": 1236.17516,
             },
             {
                 "assetId": 3890,
