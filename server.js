@@ -280,19 +280,46 @@ app.get('/assets/:id', (req, res) => {
   }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.get('/balance/:id', (req, res) => {
+  let total = 0;
+  let proposed = 0;
+  if (wallets.some(e => e.id === parseFloat(req.params.id))) {
+    wallets.find(wallet => {
+      if (wallet.id === parseFloat(req.params.id)) {
+        cryptocurrencies.forEach(crypto => {
+          wallet.balance.forEach(bal => {
+            if(crypto.id === bal.assetId)  {
+              total += (bal.tokens * crypto.quote.USD.price)
+            }
+          })
+          if(wallet.proposals.length > 0) {
+            wallet.proposals.forEach(proposal => {
+              if(proposal.hasOwnProperty("outAssetId")) {
+                if(proposal.outAssetId === crypto.id) {
+                  proposed += (proposal.outTokens * crypto.quote.USD.price)
+                }
+              }
+              if(proposal.hasOwnProperty("inAssetId")) {
+                if(proposal.outAssetId === crypto.id) {
+                  total += (proposal.outTokens * crypto.quote.USD.price)
+                }
+              }
+            })
+          } else {
+            proposed = 0;
+          }
+        })
+        // console.log(total)
+        res.json({balance: {
+          total: total,
+          proposed: proposed,
+        }})
+      }
+    })
+  } else {
+    res.status(400).json({ msg: "Wallet does not exist" })
+  }
+})
 
 
 app.get('/transactions', (req, res) => {
