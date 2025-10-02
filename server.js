@@ -10,7 +10,7 @@ const membersTemp = require('./membersDB')
 const addresses = require('./addressesDb')
 const groups = require('./groupsDb')
 let colours = ['#CFE3FD', '#F1E4F7', '#E6FAF1', '#EEFDD7', '#E8E8E8']
-const cryptocurrencies = require('./cryptocurrencies')
+// const cryptocurrencies = require('./cryptocurrencies')
 
 const app = express();
 
@@ -31,29 +31,50 @@ membersTemp.forEach((member, index) => {
   });
 });
 
-app.get('/crypto', (req, res) => {
-  new Promise(async (resolve, reject) => {
-    try {
-      response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
-        headers: {
-          'X-CMC_PRO_API_KEY': '68d5b06e-e05e-4163-a22c-8dbc35d5aa0f',
-        },
-      });
-    } catch (ex) {
-      response = null;
-      // error
-      console.log(ex);
-      reject(ex);
-    }
-    if (response) {
-      // success
-      const json = response.data.data;
+// app.get('/crypto', (req, res) => {
+//   new Promise(async (resolve, reject) => {
+//     try {
+//       response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+//         headers: {
+//           'X-CMC_PRO_API_KEY': '68d5b06e-e05e-4163-a22c-8dbc35d5aa0f',
+//         },
+//       });
+//     } catch (ex) {
+//       response = null;
+//       // error
+//       console.log(ex);
+//       reject(ex);
+//     }
+//     if (response) {
+//       // success
+//       const json = response.data.data;
 
-      res.json(json);
-      resolve(json);
-    }
-  });
-})
+//       res.json(json);
+//       resolve(json);
+//     }
+//   });
+// })
+let cryptocurrencies = [];
+async function fetchCryptoData() {
+  try {
+    console.log('Fetching crypto data...');
+    const response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+      headers: { 'X-CMC_PRO_API_KEY': '68d5b06e-e05e-4163-a22c-8dbc35d5aa0f' },
+      params: { start: 1, limit: 100, convert: 'USD' }
+    });
+    
+    cryptocurrencies = response.data.data;
+    console.log(`Updated ${cryptoData.length} cryptocurrencies at ${new Date().toISOString()}`);
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+fetchCryptoData();
+
+// Update every 5 minutes
+setInterval(fetchCryptoData, 5 * 60 * 1000);
+
 
 
 app.get('/workspaces', (req, res) => {
