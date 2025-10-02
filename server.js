@@ -105,173 +105,262 @@ app.get('/wallet/:id', (req, res) => {
 })
 
 
+// app.get('/assets', (req, res) => {
+//   if (parseFloat(req.query.walletId) >= 0) {
+//     // Create an object to store the assets for each assetId and blockchain.
+//     const assets = [];
+
+//     function rearrangeArrayFromHighestUSDToLowest(array) {
+//       // Sort the array in descending order by the `USD` property.
+//       array.sort((a, b) => (b.totalTokens * b.price) - (a.totalTokens * a.price));
+//       return array;
+//     }
+
+//     wallets.forEach(wallet => {
+//       // Iterate over all assets in the wallet.
+//       if (wallet.id === parseFloat(req.query.walletId)) {
+//         wallet.balance.forEach(asset => {
+//           // Get the assetId and blockchain.
+//           const assetId = asset.assetId;
+//           const blockchain = wallet.blockchain;
+
+//           // Create an object to store the asset data.
+//           const assetData = {
+//             uniqueId: uuid.v4(),
+//             assetId,
+//             blockchain,
+//             countOfWallets: 0,
+//             totalTokens: 0,
+//             expanded: false,
+//             wallets: [],
+//             percentageShareInUSD: 0,
+//           };
+
+//           // Find the existing asset data in the assets array, or create a new one if it doesn't exist.
+//           let existingAssetData = assets.find(
+//             assetData => assetData.assetId === assetId && assetData.blockchain === blockchain
+//           );
+//           if (!existingAssetData) {
+//             existingAssetData = assetData;
+//             assets.push(existingAssetData);
+//           }
+
+//           // Increment the count of wallets for the assetId and blockchain.
+//           existingAssetData.countOfWallets++;
+
+//           // Add the tokens to the total for the assetId and blockchain.
+//           existingAssetData.totalTokens += asset.tokens;
+
+//           // Only add the wallet to the list of wallets for the assetId and blockchain if the assetId of the wallet is the same as the assetId of the existing asset data.
+//           if (wallet.balance.some(balance => balance.assetId === assetId)) {
+
+//             // Only add the balance of the assetId to the wallet.
+//             existingAssetData.wallets.push({ balance: asset.tokens, assetId: assetId, walletId: wallet.id, walletType: wallet.type, name: wallet.name });
+
+//           }
+//         });
+//       }
+//     });
+
+
+//     assets.map(asset => {
+//       cryptocurrencies.map(crypto => {
+//         if (asset.assetId == crypto.id) {
+//           asset.percent_change_24h = crypto.quote.USD.percent_change_24h
+//           asset.price = crypto.quote.USD.price
+//           asset.symbol = crypto.symbol.toLowerCase()
+//           asset.name = crypto.symbol
+//         }
+//       })
+//     })
+
+//     let totalValueOfAllAssetsInUSD = 0
+//     assets.map(asset => {
+//       asset.USD = (asset.price * asset.totalTokens)
+//       totalValueOfAllAssetsInUSD = asset.USD + totalValueOfAllAssetsInUSD
+//     })
+
+
+//     assets.map(asset => {
+//       asset.percentageShareInUSD = (asset.USD * 100 / totalValueOfAllAssetsInUSD)
+//     })
+
+
+//     const newAssets = rearrangeArrayFromHighestUSDToLowest(assets)
+
+//     return res.json(newAssets);
+//   }
+
+//   // Create an object to store the assets for each assetId and blockchain.
+//   const assets = [];
+
+//   function rearrangeArrayFromHighestUSDToLowest(array) {
+//     // Sort the array in descending order by the `USD` property.
+//     array.sort((a, b) => (b.totalTokens * b.price) - (a.totalTokens * a.price));
+//     return array;
+//   }
+
+//   wallets.forEach(wallet => {
+//     // Iterate over all assets in the wallet.
+//     wallet.balance.forEach(asset => {
+//       // Get the assetId and blockchain.
+//       const assetId = asset.assetId;
+//       const blockchain = wallet.blockchain;
+
+//       // Create an object to store the asset data.
+//       const assetData = {
+//         uniqueId: uuid.v4(),
+//         assetId,
+//         blockchain,
+//         countOfWallets: 0,
+//         totalTokens: 0,
+//         expanded: false,
+//         wallets: [],
+//         percentageShareInUSD: 0,
+//       };
+
+//       // Find the existing asset data in the assets array, or create a new one if it doesn't exist.
+//       let existingAssetData = assets.find(
+//         assetData => assetData.assetId === assetId && assetData.blockchain === blockchain
+//       );
+//       if (!existingAssetData) {
+//         existingAssetData = assetData;
+//         assets.push(existingAssetData);
+//       }
+
+//       // Increment the count of wallets for the assetId and blockchain.
+//       existingAssetData.countOfWallets++;
+
+//       // Add the tokens to the total for the assetId and blockchain.
+//       existingAssetData.totalTokens += asset.tokens;
+
+//       // Only add the wallet to the list of wallets for the assetId and blockchain if the assetId of the wallet is the same as the assetId of the existing asset data.
+//       if (wallet.balance.some(balance => balance.assetId === assetId)) {
+
+//         // Only add the balance of the assetId to the wallet.
+//         existingAssetData.wallets.push({ balance: asset.tokens, assetId: assetId, walletId: wallet.id, walletType: wallet.type, name: wallet.name });
+
+//       }
+//     });
+//   });
+
+
+//   assets.map(asset => {
+//     cryptocurrencies.map(crypto => {
+//       if (asset.assetId == crypto.id) {
+//         asset.percent_change_24h = crypto.quote.USD.percent_change_24h
+//         asset.price = crypto.quote.USD.price
+//         asset.symbol = crypto.symbol.toLowerCase()
+//         asset.name = crypto.symbol
+//       }
+//     })
+//   })
+
+//   let totalValueOfAllAssetsInUSD = 0
+//   assets.map(asset => {
+//     asset.USD = (asset.price * asset.totalTokens)
+//     totalValueOfAllAssetsInUSD = asset.USD + totalValueOfAllAssetsInUSD
+//   })
+
+
+//   assets.map(asset => {
+//     asset.percentageShareInUSD = (asset.USD * 100 / totalValueOfAllAssetsInUSD)
+//   })
+
+//   const newAssets = rearrangeArrayFromHighestUSDToLowest(assets)
+
+//   return res.json(newAssets);
+// })
+
+
+
+// New assets with wallet share
 app.get('/assets', (req, res) => {
-  if (parseFloat(req.query.walletId) >= 0) {
-    // Create an object to store the assets for each assetId and blockchain.
-    const assets = [];
+  // Filter wallets if walletId is provided
+  const filteredWallets = req.query.walletId >= 0 
+    ? wallets.filter(wallet => wallet.id === parseFloat(req.query.walletId))
+    : wallets;
 
-    function rearrangeArrayFromHighestUSDToLowest(array) {
-      // Sort the array in descending order by the `USD` property.
-      array.sort((a, b) => (b.totalTokens * b.price) - (a.totalTokens * a.price));
-      return array;
-    }
-
-    wallets.forEach(wallet => {
-      // Iterate over all assets in the wallet.
-      if (wallet.id === parseFloat(req.query.walletId)) {
-        wallet.balance.forEach(asset => {
-          // Get the assetId and blockchain.
-          const assetId = asset.assetId;
-          const blockchain = wallet.blockchain;
-
-          // Create an object to store the asset data.
-          const assetData = {
-            uniqueId: uuid.v4(),
-            assetId,
-            blockchain,
-            countOfWallets: 0,
-            totalTokens: 0,
-            expanded: false,
-            wallets: [],
-            percentageShareInUSD: 0,
-          };
-
-          // Find the existing asset data in the assets array, or create a new one if it doesn't exist.
-          let existingAssetData = assets.find(
-            assetData => assetData.assetId === assetId && assetData.blockchain === blockchain
-          );
-          if (!existingAssetData) {
-            existingAssetData = assetData;
-            assets.push(existingAssetData);
-          }
-
-          // Increment the count of wallets for the assetId and blockchain.
-          existingAssetData.countOfWallets++;
-
-          // Add the tokens to the total for the assetId and blockchain.
-          existingAssetData.totalTokens += asset.tokens;
-
-          // Only add the wallet to the list of wallets for the assetId and blockchain if the assetId of the wallet is the same as the assetId of the existing asset data.
-          if (wallet.balance.some(balance => balance.assetId === assetId)) {
-
-            // Only add the balance of the assetId to the wallet.
-            existingAssetData.wallets.push({ balance: asset.tokens, assetId: assetId, walletId: wallet.id, walletType: wallet.type, name: wallet.name });
-
-          }
-        });
-      }
-    });
-
-
-    assets.map(asset => {
-      cryptocurrencies.map(crypto => {
-        if (asset.assetId == crypto.id) {
-          asset.percent_change_24h = crypto.quote.USD.percent_change_24h
-          asset.price = crypto.quote.USD.price
-          asset.symbol = crypto.symbol.toLowerCase()
-          asset.name = crypto.symbol
-        }
-      })
-    })
-
-    let totalValueOfAllAssetsInUSD = 0
-    assets.map(asset => {
-      asset.USD = (asset.price * asset.totalTokens)
-      totalValueOfAllAssetsInUSD = asset.USD + totalValueOfAllAssetsInUSD
-    })
-
-
-    assets.map(asset => {
-      asset.percentageShareInUSD = (asset.USD * 100 / totalValueOfAllAssetsInUSD)
-    })
-
-
-    const newAssets = rearrangeArrayFromHighestUSDToLowest(assets)
-
-    return res.json(newAssets);
-  }
-
-  // Create an object to store the assets for each assetId and blockchain.
+  // Create an object to store the assets for each assetId and blockchain
   const assets = [];
 
   function rearrangeArrayFromHighestUSDToLowest(array) {
-    // Sort the array in descending order by the `USD` property.
-    array.sort((a, b) => (b.totalTokens * b.price) - (a.totalTokens * a.price));
-    return array;
+    return array.sort((a, b) => (b.totalTokens * b.price) - (a.totalTokens * a.price));
   }
 
-  wallets.forEach(wallet => {
-    // Iterate over all assets in the wallet.
+  // Process wallets and aggregate asset data
+  filteredWallets.forEach(wallet => {
     wallet.balance.forEach(asset => {
-      // Get the assetId and blockchain.
       const assetId = asset.assetId;
       const blockchain = wallet.blockchain;
 
-      // Create an object to store the asset data.
-      const assetData = {
-        uniqueId: uuid.v4(),
-        assetId,
-        blockchain,
-        countOfWallets: 0,
-        totalTokens: 0,
-        expanded: false,
-        wallets: [],
-        percentageShareInUSD: 0,
-      };
-
-      // Find the existing asset data in the assets array, or create a new one if it doesn't exist.
+      // Find or create asset data
       let existingAssetData = assets.find(
         assetData => assetData.assetId === assetId && assetData.blockchain === blockchain
       );
+      
       if (!existingAssetData) {
-        existingAssetData = assetData;
+        existingAssetData = {
+          uniqueId: uuid.v4(),
+          assetId,
+          blockchain,
+          countOfWallets: 0,
+          totalTokens: 0,
+          expanded: false,
+          wallets: [],
+          percentageShareInUSD: 0,
+        };
         assets.push(existingAssetData);
       }
 
-      // Increment the count of wallets for the assetId and blockchain.
+      // Update asset aggregates
       existingAssetData.countOfWallets++;
-
-      // Add the tokens to the total for the assetId and blockchain.
       existingAssetData.totalTokens += asset.tokens;
 
-      // Only add the wallet to the list of wallets for the assetId and blockchain if the assetId of the wallet is the same as the assetId of the existing asset data.
-      if (wallet.balance.some(balance => balance.assetId === assetId)) {
-
-        // Only add the balance of the assetId to the wallet.
-        existingAssetData.wallets.push({ balance: asset.tokens, assetId: assetId, walletId: wallet.id, walletType: wallet.type, name: wallet.name });
-
-      }
+      // Add wallet to asset's wallet list with percentage share
+      existingAssetData.wallets.push({ 
+        balance: asset.tokens, 
+        assetId: assetId, 
+        walletId: wallet.id, 
+        walletType: wallet.type, 
+        name: wallet.name 
+      });
     });
   });
 
+  // Enrich with cryptocurrency data
+  assets.forEach(asset => {
+    const crypto = cryptocurrencies.find(c => c.id == asset.assetId);
+    if (crypto) {
+      asset.percent_change_24h = crypto.quote.USD.percent_change_24h;
+      asset.price = crypto.quote.USD.price;
+      asset.symbol = crypto.symbol.toLowerCase();
+      asset.name = crypto.symbol;
+    }
+  });
 
-  assets.map(asset => {
-    cryptocurrencies.map(crypto => {
-      if (asset.assetId == crypto.id) {
-        asset.percent_change_24h = crypto.quote.USD.percent_change_24h
-        asset.price = crypto.quote.USD.price
-        asset.symbol = crypto.symbol.toLowerCase()
-        asset.name = crypto.symbol
-      }
-    })
-  })
+  // Calculate USD values and total portfolio value
+  let totalValueOfAllAssetsInUSD = 0;
+  assets.forEach(asset => {
+    asset.USD = asset.price * asset.totalTokens;
+    totalValueOfAllAssetsInUSD += asset.USD;
+  });
 
-  let totalValueOfAllAssetsInUSD = 0
-  assets.map(asset => {
-    asset.USD = (asset.price * asset.totalTokens)
-    totalValueOfAllAssetsInUSD = asset.USD + totalValueOfAllAssetsInUSD
-  })
+  // Calculate percentage shares
+  assets.forEach(asset => {
+    // Percentage of this asset in the total portfolio
+    asset.percentageShareInUSD = (asset.USD * 100 / totalValueOfAllAssetsInUSD);
+    
+    // Calculate percentage share per wallet for this specific asset
+    asset.wallets.forEach(wallet => {
+      wallet.percentageShare = (wallet.balance * 100 / asset.totalTokens);
+    });
+  });
 
-
-  assets.map(asset => {
-    asset.percentageShareInUSD = (asset.USD * 100 / totalValueOfAllAssetsInUSD)
-  })
-
-  const newAssets = rearrangeArrayFromHighestUSDToLowest(assets)
-
-  return res.json(newAssets);
-})
-
+  const sortedAssets = rearrangeArrayFromHighestUSDToLowest(assets);
+  return res.json(sortedAssets);
+});
+// Assets with wallet share end
 
 
 app.get('/assets/:id', (req, res) => {
