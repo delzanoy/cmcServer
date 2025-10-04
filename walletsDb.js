@@ -151,10 +151,6 @@ const wallets = [
                 "tokens": 751875.2175,
             },
             {
-                "assetId": 52,
-                "tokens": 36826.116,
-            },
-            {
                 "assetId": 1437,
                 "tokens": 941875.2175,
             },
@@ -1172,6 +1168,10 @@ const wallets = [
             {
                 "assetId": 3890,
                 "tokens": 751875.2175,
+            },
+            {
+                "assetId": 52,
+                "tokens": 36826.116,
             },
             {
                 "assetId": 4943,
