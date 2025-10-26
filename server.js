@@ -360,6 +360,91 @@ app.get('/balance/:id', (req, res) => {
 
 
 app.get('/transactions', (req, res) => {
+// all Tx start
+  if (req.query.page === undefined) {
+      let transactionsList = []
+      wallets.forEach(wallet => {
+        if (Object.keys(wallet.transactions).length > 0) {
+          wallet.transactions.forEach(transaction => {
+            let transactionTemp = {
+              id: transaction.transactionId,
+              timestamp: transaction.timestamp,
+              moreThan3: false,
+              titleTransaction: true,
+              expanded: false,
+              incoming: transaction.hasOwnProperty("inAssetId"),
+              outgoing: transaction.hasOwnProperty("outAssetId"),
+              walletId: wallet.id,
+              wallet: wallet.name,
+              walletType: wallet.type,
+              blockchain: transaction.blockchain,
+              multiRecipient: Array.isArray(transaction.toAddress),
+              recipients: transaction.toAddress,
+              inTokens: transaction.hasOwnProperty("inAssetId") ? parseFloat(transaction.inTokens) : null,
+              outTokens: transaction.hasOwnProperty("outAssetId") ? parseFloat(transaction.outTokens) : null,
+              classification: transaction.classification,
+            }
+            cryptocurrencies.forEach(crypto => {
+              if (crypto.id === transaction.outAssetId) {
+                transactionTemp.outTokenSymbol = crypto.symbol
+                transactionTemp.outUSDPrice = parseFloat(crypto.quote.USD.price)
+              }
+              if (crypto.id === transaction.inAssetId) {
+                transactionTemp.inTokenSymbol = crypto.symbol
+                transactionTemp.inUSDPrice = parseFloat(crypto.quote.USD.price)
+              }
+              members.forEach(member => {
+                if (member.id === transaction.initiator) {
+                  transactionTemp.initiator = member.name
+                }
+                if (member.id === transaction.executer) {
+                  transactionTemp.executer = member.name
+                }
+              })
+            })
+            transactionsList.push(transactionTemp);
+
+          })
+        }
+      });
+
+      let newList = transactionsList.sort(function (x, y) {
+        return y.timestamp - x.timestamp;
+      })
+      const currentPage = parseFloat(req.query.page)
+      const transactionsPerPage = 25
+      const lastIndex = (currentPage + 1) * transactionsPerPage
+      const firstIndex = lastIndex - transactionsPerPage
+      const transactions = newList.slice(firstIndex, lastIndex)
+      const transactionsCount = transactionsList.length
+
+      for (let i = 0; i < transactions.length - 1; i++) {
+        if (transactions[i].timestamp - transactions[i + 1].timestamp < (1000 * 60 * 60 * 24)) {
+          transactions[i + 1].titleTransaction = false
+        }
+      }
+
+      for (let i = 0; i < transactions.length; i++) {
+        if (moment(Date.now()).diff(moment(transactions[i].timestamp), 'days') < 3) {
+          transactions[i].moreThan3 = true
+        }
+      }
+
+      return res.json({ transactions, transactionsCount });
+  }
+// all Tx ends here
+
+
+
+
+
+
+
+
+
+
+  
+  
   if (parseFloat(req.query.page) >= 0) {
     if (parseFloat(req.query.walletId) > 0) {
       let transactionsList = []
