@@ -291,7 +291,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "action_required",
             },
             {
                 "proposalId": "0x188b6515afmare339f55f1581041c010db22381aab6426cd484dd4cc09246ce84",
@@ -308,7 +308,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj81001c010db22381aab64261d4848d4cc09246ce84",
@@ -335,7 +335,7 @@ const wallets = [
                 "classification": "AR Advertising",
                 "initiator": 1,
                 "toAddress": "0xdc33d194D61464d5D79e1C1BCCB556ed719D3cFc",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0686fbf1s9774049ffa7dc180adf959d31deafec",
@@ -353,7 +353,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515afmare339f55f1581501c010db22381aab6426cd484dd4cc09246ce84",
@@ -370,7 +370,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj81091c010db22381aab64261d484dd4cc09246ce84",
@@ -397,7 +397,7 @@ const wallets = [
                 "classification": "Food & Misc",
                 "initiator": 3,
                 "toAddress": "0xd00be3932Fb6000a76Cb8b1F159F496B8145a2b8",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0681fbf1s9774049ffa7dc180adf959d31deafec",
@@ -421,7 +421,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6615afmare339f55f1581001c010db22381aab6426cd484dd4cc09246ce84",
@@ -438,7 +438,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj81001c010db22381aab64261d484dd4cc09246ce84",
@@ -465,7 +465,7 @@ const wallets = [
                 "classification": "AR Advertising",
                 "initiator": 5,
                 "toAddress": "0xe81FA2dEF1bc7ebeD7A5958C4fA06Fb9635f3Dcd",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0626fbf1s9774049ffa7dc180adf959d31deafec",
@@ -492,7 +492,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515afmare339f55f1581001c010db22371aab6426cd484dd4cc09246ce84",
@@ -509,7 +509,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj82001c010db22381aab64261d484dd4cc09246ce84",
@@ -536,7 +536,7 @@ const wallets = [
                 "classification": "Times Square project",
                 "initiator": 4,
                 "toAddress": "0xa66BBAE138a9d56456b6d31DAcb8776248A3CE06",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0686fbf1s97740493fa7dc180adf959d31deafec",
@@ -554,7 +554,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515afmare338f55f1581001c010db22381aab6426cd484dd4cc09246ce84",
@@ -571,7 +571,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj81001c010db22381aab64231d484dd4cc09246ce84",
@@ -598,7 +598,7 @@ const wallets = [
                 "classification": "Team outing",
                 "initiator": 2,
                 "toAddress": "0x6d1809D5207B3A6E9632Aac997f469B3A4B5C286",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0686fbf1s9724049ffa7dc180adf959d31deafec",
@@ -629,7 +629,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515afmare339f55f1581001c010db22381aab6426cd484dd4cc09246ce84",
@@ -646,7 +646,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339455raj81001c010db22381aab64261d484dd4cc09246ce84",
@@ -673,7 +673,7 @@ const wallets = [
                 "classification": "Times Square project",
                 "initiator": 3,
                 "toAddress": "0xc7447F1B5e5c2D3FA1BDc63299A617b55f143A71",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0686fbf1s9774049ffa7dc180pdf959d31deafec",
@@ -701,7 +701,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60e0686fbf1s9774149ffa7dc180pdf959d31deafec",
@@ -719,7 +719,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515afmare339f55f1581201c010db22381aab6426cd484dd4cc09246ce84",
@@ -736,7 +736,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj81601c010db22381aab64261d484dd4cc09246ce84",
@@ -763,7 +763,7 @@ const wallets = [
                 "classification": "Team outing",
                 "initiator": 3,
                 "toAddress": "0xb0b722f0503a11B07e7edF19D94909dA997Fb817",
-                "status": "no action",
+                "status": "no_action",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2fldf60e0686fbf1s9774049ffa7dc180adf959d31deafec",
@@ -781,7 +781,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 2 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515afmare339f55f1581031c010db22381aab6426cd484dd4cc09246ce84",
@@ -798,7 +798,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55raj81701c010db22381aab64261d484dd4cc09246ce84",
@@ -825,7 +825,7 @@ const wallets = [
                 "classification": "Team outing",
                 "initiator": 2,
                 "toAddress": "0xe8fAaA3e0f8cf6d49859C9ADB058398C96b02124",
-                "status": "no action",
+                "status": "no_action",
             },
         ]
     },
@@ -919,7 +919,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 2 },
                 ],
-                "status": "awaiting nonce",
+                "status": "awaiting_nonce",
             },
         ]
     },
@@ -2957,7 +2957,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db22381aab6426cd484dd4cc09246ce84",
@@ -2975,7 +2975,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "execution failed",
+                "status": "failed",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda0db22381aab64261d484dux8309246ce84",
@@ -3006,7 +3006,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60efeb6fbfeb9174049ffa7dc180adf959d31deafec",
@@ -3027,7 +3027,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x28443d391cf2b4bp2f5df60efeb6fbfeb9174049ffa7dc180adf959d31deafec",
@@ -3048,7 +3048,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x28443d311cf2b4bp2f5df60efeb6fbfeb9174049ffa7dc180adf959d31deafec",
@@ -3066,7 +3066,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda012s10db22381aab6426cd484dd4cc09246ce84",
@@ -3084,7 +3084,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "approval required",
+                "status": "needs_approval",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda0db22381aab64261d484dd4cc09246ce84",
@@ -3100,7 +3100,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 2 },
                 ],
-                "status": "discarded",
+                "status": "failed_rejected",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15810decc010db22381aab642611244dd4cc09246ce84",
@@ -3139,7 +3139,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db66681aab6426cd484dd4cc09246ce84",
@@ -3157,7 +3157,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "execution failed",
+                "status": "failed",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda0db223ca1aab64261d484dd4cc09246ce84",
@@ -3188,7 +3188,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "discarded",
+                "status": "failed_rejected",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60efeb6fbfeb9714049ffa7dc180adf959d31deafec",
@@ -3218,7 +3218,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f14664a01c010db22381aab6426cd484dd4cc09246ce84",
@@ -3236,7 +3236,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "execution failed",
+                "status": "failed",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f158c311sda0db22381aab64261d484dd4cc09246ce84",
@@ -3252,7 +3252,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 2 },
                 ],
-                "status": "rejected",
+                "status": "declined",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15810d6cc010db22381aab642611244dd4cc09246ce84",
@@ -3288,7 +3288,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010dbc3a81aab6426cd484dd4cc09246ce84",
@@ -3306,7 +3306,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "execution failed",
+                "status": "failed",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda0db22381aab64261d484dd4cc0xz431ce84",
@@ -3337,7 +3337,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "rejected",
+                "status": "declined",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df60efeb6fbfeb9774049pfa7dc180adf959d31deafec",
@@ -3358,7 +3358,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db22381aab6426cd484aed4c09246ce84",
@@ -3376,7 +3376,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "rejected",
+                "status": "declined",
             },
             {
                 "proposalId": "0x188b6515fv931e339f55f1581001sda0db22381aab64261d484dd4cc09246ce84",
@@ -3427,7 +3427,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db22381aab6426cd484dd4cc092c3ze84",
@@ -3445,7 +3445,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "execution failed",
+                "status": "failed",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f158zx93esda0db22381aab64261d484dd4cc09246ce84",
@@ -3476,7 +3476,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "rejected",
+                "status": "declined",
             },
             {
                 "proposalId": "0x28443d391cf2b4ba2f5df699zeb6fbfeb9774049ffa7dc180adf959d31deafec",
@@ -3495,7 +3495,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x13bb6515af07e339f55f15sda01c010db22381aab6426cd484dd4cc09246ce84",
@@ -3513,7 +3513,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "rejected",
+                "status": "declined",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f158vx94sda0db22381aab64261d484dd4cc09246ce84",
@@ -3563,7 +3563,7 @@ const wallets = [
                 "approvals": [
                     { "approverId": 1 },
                 ],
-                "status": "execution ready",
+                "status": "ready",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f15sda01c010db22381aab6426cd3c3azd4cc09246ce84",
@@ -3581,7 +3581,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 4 },
                 ],
-                "status": "execution failed",
+                "status": "failed",
             },
             {
                 "proposalId": "0x188b6515af07e339f55f1581001sda1230x2381aab64261d484dd4cc09246ce84",
@@ -3597,7 +3597,7 @@ const wallets = [
                     { "approverId": 1 },
                     { "approverId": 2 },
                 ],
-                "status": "rejected",
+                "status": "declined",
             },
             {
                 "proposalId": "0x188b6515af07e339f55r15810decc010db22381aab642611244dd4cc09246ce84",
