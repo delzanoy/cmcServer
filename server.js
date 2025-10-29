@@ -678,7 +678,7 @@ app.get('/proposals/needs-approval', (req, res) => {
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
 
-            if (proposal.status === "no action" || proposal.status === "actioned" || proposal.status === "approval required") {
+            if (proposal.status === "no_action" || proposal.status === "actioned" || proposal.status === "action_required") {
               let proposalTemp = {
                 id: proposal.proposalId,
                 timestamp: proposal.timestamp,
@@ -715,7 +715,7 @@ app.get('/proposals/needs-approval', (req, res) => {
     } else {
       if (Object.keys(wallet.proposals).length > 0) {
         wallet.proposals.forEach(proposal => {
-          if (proposal.status === "no action" || proposal.status === "actioned" || proposal.status === "approval required") {
+          if (proposal.status === "no_action" || proposal.status === "actioned" || proposal.status === "action_required") {
             let proposalTemp = {
               id: proposal.proposalId,
               timestamp: proposal.timestamp,
@@ -793,7 +793,7 @@ app.get('/proposals/ready-to-execute', (req, res) => {
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
 
-            if (proposal.status === "executing" || proposal.status === "execution failed" || proposal.status === "execution ready" || proposal.status === "awaiting nonce") {
+            if (proposal.status === "executing" || proposal.status === "failed" || proposal.status === "ready" || proposal.status === "awaiting_nonce") {
               let proposalTemp = {
                 id: proposal.proposalId,
                 timestamp: proposal.timestamp,
@@ -831,7 +831,7 @@ app.get('/proposals/ready-to-execute', (req, res) => {
     } else {
       if (Object.keys(wallet.proposals).length > 0) {
         wallet.proposals.forEach(proposal => {
-          if (proposal.status === "executing" || proposal.status === "execution failed" || proposal.status === "execution ready" || proposal.status === "awaiting nonce") {
+          if (proposal.status === "executing" || proposal.status === "failed" || proposal.status === "ready" || proposal.status === "awaiting_nonce") {
             let proposalTemp = {
               id: proposal.proposalId,
               timestamp: proposal.timestamp,
@@ -895,9 +895,9 @@ app.get('/proposals/ready-to-execute', (req, res) => {
 })
 
 
-app.get('/proposals/discarded', (req, res) => {
+app.get('/proposals/failed_rejected', (req, res) => {
 
-  let discarded = []
+  let failed_rejected = []
   wallets.forEach(wallet => {
     if (parseFloat(req.query.walletId) >= 0) {
 
@@ -906,7 +906,7 @@ app.get('/proposals/discarded', (req, res) => {
         if (Object.keys(wallet.proposals).length > 0) {
           wallet.proposals.forEach(proposal => {
 
-            if (proposal.status === "discarded" || proposal.status === "rejected") {
+            if (proposal.status === "failed_rejected" || proposal.status === "declined") {
               let proposalTemp = {
                 id: proposal.proposalId,
                 timestamp: proposal.timestamp,
@@ -935,7 +935,7 @@ app.get('/proposals/discarded', (req, res) => {
                     proposalTemp.initiatorColour = member.colour
                 }
               })
-              discarded.push(proposalTemp)
+              failed_rejected.push(proposalTemp)
 
             }
           })
@@ -944,7 +944,7 @@ app.get('/proposals/discarded', (req, res) => {
     } else {
       if (Object.keys(wallet.proposals).length > 0) {
         wallet.proposals.forEach(proposal => {
-          if (proposal.status === "discarded" || proposal.status === "rejected") {
+          if (proposal.status === "failed_rejected" || proposal.status === "declined") {
             let proposalTemp = {
               id: proposal.proposalId,
               timestamp: proposal.timestamp,
@@ -973,38 +973,38 @@ app.get('/proposals/discarded', (req, res) => {
                   proposalTemp.initiatorColour = member.colour
               }
             })
-            discarded.push(proposalTemp)
+            failed_rejected.push(proposalTemp)
           }
         })
       }
     }
   });
 
-  let discardedTemp = discarded.sort(function (x, y) {
+  let failed_rejectedTemp = failed_rejected.sort(function (x, y) {
     return y.timestamp - x.timestamp;
   })
 
   const currentPage = parseFloat(req.query.page)
-  const discardedPerPage = 25
-  const lastIndex = (currentPage + 1) * discardedPerPage
-  const firstIndex = lastIndex - discardedPerPage
-  const discardedList = discardedTemp.slice(firstIndex, lastIndex)
-  const discardedCount = discardedTemp.length
+  const failed_rejectedPerPage = 25
+  const lastIndex = (currentPage + 1) * failed_rejectedPerPage
+  const firstIndex = lastIndex - failed_rejectedPerPage
+  const failed_rejectedList = failed_rejectedTemp.slice(firstIndex, lastIndex)
+  const failed_rejectedCount = failed_rejectedTemp.length
 
 
-  for (let i = 0; i < discardedList.length - 1; i++) {
-    if (discardedList[i].timestamp - discardedList[i + 1].timestamp < (1000 * 60 * 60 * 24)) {
-      discardedList[i + 1].titleTransaction = false
+  for (let i = 0; i < failed_rejectedList.length - 1; i++) {
+    if (failed_rejectedList[i].timestamp - failed_rejectedList[i + 1].timestamp < (1000 * 60 * 60 * 24)) {
+      failed_rejectedList[i + 1].titleTransaction = false
     }
   }
 
-  for (let i = 0; i < discardedList.length; i++) {
-    if (moment(Date.now()).diff(moment(discardedList[i].timestamp), 'days') < 3) {
-      discardedList[i].moreThan3 = true
+  for (let i = 0; i < failed_rejectedList.length; i++) {
+    if (moment(Date.now()).diff(moment(failed_rejectedList[i].timestamp), 'days') < 3) {
+      failed_rejectedList[i].moreThan3 = true
     }
   }
 
-  return res.json({ discarded: discardedList, discardedCount });
+  return res.json({ failed_rejected: failed_rejectedList, failed_rejectedCount });
 })
 
 
@@ -1013,7 +1013,7 @@ app.get('/proposals', (req, res) => {
   if (parseFloat(req.query.wallet) > 0) {
     let needsApproval = []
     let readyToExecute = []
-    let discarded = []
+    let failed_rejected = []
 
 
 
@@ -1050,13 +1050,13 @@ app.get('/proposals', (req, res) => {
               }
             })
 
-            if (proposal.status === "executing" || proposal.status === "execution failed" || proposal.status === "execution ready" || proposal.status === "awaiting nonce") {
+            if (proposal.status === "executing" || proposal.status === "failed" || proposal.status === "ready" || proposal.status === "awaiting_nonce") {
               readyToExecute.push(proposalTemp)
             }
-            if (proposal.status === "discarded" || proposal.status === "rejected") {
-              discarded.push(proposalTemp)
+            if (proposal.status === "failed_rejected" || proposal.status === "declined") {
+              failed_rejected.push(proposalTemp)
             }
-            if (proposal.status === "no action" || proposal.status === "actioned" || proposal.status === "approval required") {
+            if (proposal.status === "no_action" || proposal.status === "actioned" || proposal.status === "action_required") {
               needsApproval.push(proposalTemp)
             }
 
@@ -1066,7 +1066,7 @@ app.get('/proposals', (req, res) => {
       }
     });
 
-    let proposalList = readyToExecute.concat(discarded.concat(needsApproval))
+    let proposalList = readyToExecute.concat(failed_rejected.concat(needsApproval))
 
     let newList = proposalList.sort(function (x, y) {
       return y.timestamp - x.timestamp;
@@ -1091,7 +1091,7 @@ app.get('/proposals', (req, res) => {
 
   let needsApproval = []
   let readyToExecute = []
-  let discarded = []
+  let failed_rejected = []
 
 
   wallets.forEach(wallet => {
@@ -1125,13 +1125,13 @@ app.get('/proposals', (req, res) => {
               proposalTemp.initiatorColour = member.colour
           }
         })
-        if (proposal.status === "executing" || proposal.status === "execution failed" || proposal.status === "execution ready" || proposal.status === "awaiting nonce") {
+        if (proposal.status === "executing" || proposal.status === "failed" || proposal.status === "ready" || proposal.status === "awaiting_nonce") {
           readyToExecute.push(proposalTemp)
         }
-        if (proposal.status === "discarded" || proposal.status === "rejected") {
-          discarded.push(proposalTemp)
+        if (proposal.status === "failed_rejected" || proposal.status === "declined") {
+          failed_rejected.push(proposalTemp)
         }
-        if (proposal.status === "no action" || proposal.status === "actioned" || proposal.status === "approval required") {
+        if (proposal.status === "no_action" || proposal.status === "actioned" || proposal.status === "action_required") {
           needsApproval.push(proposalTemp)
         }
       })
@@ -1165,15 +1165,15 @@ app.get('/proposals', (req, res) => {
     return y.timestamp - x.timestamp;
   })
 
-  discarded = discarded.sort(function (x, y) {
+  failed_rejected = failed_rejected.sort(function (x, y) {
     return y.timestamp - x.timestamp;
   })
 
   let needsApprovalNew = addTitle(needsApproval)
   let readyToExecuteNew = addTitle(readyToExecute)
-  let discardedNew = addTitle(discarded)
+  let failed_rejectedNew = addTitle(failed_rejected)
 
-  let proposalList = discardedNew.concat(readyToExecuteNew.concat(needsApprovalNew))
+  let proposalList = failed_rejectedNew.concat(readyToExecuteNew.concat(needsApprovalNew))
 
 
 
