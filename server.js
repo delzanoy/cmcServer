@@ -201,6 +201,120 @@ app.get('/wallets', (req, res) => {
 // })
 
 
+// app.get('/wallet/:id', (req, res) => {
+//   if (wallets.some(e => e.id === parseFloat(req.params.id))) {
+//     wallets.find(wallet => {
+//       if (wallet.id === parseFloat(req.params.id)) {
+//         // Create a deep copy of the wallet to avoid modifying the original
+//         const walletWithUSD = JSON.parse(JSON.stringify(wallet))
+        
+//         // Add USD prices to balance assets
+//         if (walletWithUSD.balance) {
+//           walletWithUSD.balance = walletWithUSD.balance.map(asset => {
+//             const assetWithUSD = { ...asset }
+            
+//             // Add assetUSD if assetId exists
+//             if (asset.assetId) {
+//               const crypto = cryptocurrencies.find(c => c.id === asset.assetId)
+//               if (crypto && crypto.quote && crypto.quote.USD) {
+//                 assetWithUSD.assetUSD = crypto.quote.USD.price
+//               }
+//             }
+            
+//             return assetWithUSD
+//           })
+//         }
+        
+//         // Add USD prices to transactions
+//         if (walletWithUSD.transactions) {
+//           walletWithUSD.transactions = walletWithUSD.transactions.map(transaction => {
+//             const transactionWithUSD = { ...transaction }
+            
+//             // Add inUSDPrice if inAssetId exists
+//             if (transaction.inAssetId) {
+//               const crypto = cryptocurrencies.find(c => c.id === transaction.inAssetId)
+//               if (crypto && crypto.quote && crypto.quote.USD) {
+//                 transactionWithUSD.inUSDPrice = crypto.quote.USD.price
+//               }
+//             }
+            
+//             // Add outUSDPrice if outAssetId exists
+//             if (transaction.outAssetId) {
+//               const crypto = cryptocurrencies.find(c => c.id === transaction.outAssetId)
+//               if (crypto && crypto.quote && crypto.quote.USD) {
+//                 transactionWithUSD.outUSDPrice = crypto.quote.USD.price
+//               }
+//             }
+            
+//             return transactionWithUSD
+//           })
+//         }
+        
+//         // Add enriched data to proposals to match /proposals endpoint format
+//         if (walletWithUSD.proposals) {
+//           walletWithUSD.proposals = walletWithUSD.proposals.map(proposal => {
+//             const proposalWithUSD = { ...proposal }
+            
+//             // Add outUSDPrice if outAssetId exists
+//             if (proposal.outAssetId) {
+//               const crypto = cryptocurrencies.find(c => c.id === proposal.outAssetId)
+//               if (crypto && crypto.quote && crypto.quote.USD) {
+//                 proposalWithUSD.outUSDPrice = crypto.quote.USD.price
+//                 proposalWithUSD.outTokenSymbol = crypto.symbol
+//               }
+//             }
+            
+//             // Add additional fields to match /proposals endpoint
+//             proposalWithUSD.id = proposal.proposalId
+//             proposalWithUSD.moreThan3 = false
+//             proposalWithUSD.titleTransaction = true
+//             proposalWithUSD.walletId = wallet.id
+//             proposalWithUSD.wallet = wallet.name
+//             proposalWithUSD.walletType = wallet.type
+//             proposalWithUSD.blockchain = proposal.blockchain || wallet.blockchain
+//             proposalWithUSD.multiRecipient = Array.isArray(proposal.toAddress)
+//             proposalWithUSD.recipients = proposal.toAddress
+//             proposalWithUSD.outTokens = proposal.outTokens
+//             proposalWithUSD.classification = proposal.classification
+//             proposalWithUSD.approvals = proposal.approvals
+//             proposalWithUSD.status = proposal.status
+            
+//             // Add initiator information
+//             members.forEach(member => {
+//               if (member.id === proposal.initiator) {
+//                 proposalWithUSD.initiator = member.name
+//                 proposalWithUSD.initiatorColour = member.colour
+//               }
+//             })
+            
+//             // Calculate time-based fields
+//             if (moment(Date.now()).diff(moment(proposal.timestamp), 'days') < 3) {
+//               proposalWithUSD.moreThan3 = true
+//             }
+            
+//             return proposalWithUSD
+//           })
+          
+//           // Sort proposals by timestamp (newest first) to match /proposals endpoint
+//           walletWithUSD.proposals.sort((a, b) => b.timestamp - a.timestamp)
+          
+//           // Set titleTransaction flags (show date headers appropriately)
+//           for (let i = 0; i < walletWithUSD.proposals.length - 1; i++) {
+//             if (walletWithUSD.proposals[i].timestamp - walletWithUSD.proposals[i + 1].timestamp < (1000 * 60 * 60 * 24)) {
+//               walletWithUSD.proposals[i + 1].titleTransaction = false
+//             }
+//           }
+//         }
+        
+//         res.json(walletWithUSD)
+//       }
+//     })
+//   } else {
+//     res.status(400).json({ msg: "Wallet does not exist" })
+//   }
+// })
+
+
 app.get('/wallet/:id', (req, res) => {
   if (wallets.some(e => e.id === parseFloat(req.params.id))) {
     wallets.find(wallet => {
@@ -208,21 +322,47 @@ app.get('/wallet/:id', (req, res) => {
         // Create a deep copy of the wallet to avoid modifying the original
         const walletWithUSD = JSON.parse(JSON.stringify(wallet))
         
-        // Add USD prices to balance assets
+        // Enrich balance assets to match /assets endpoint format
         if (walletWithUSD.balance) {
           walletWithUSD.balance = walletWithUSD.balance.map(asset => {
-            const assetWithUSD = { ...asset }
+            const assetWithUSD = { 
+              ...asset,
+              uniqueId: uuid.v4() // Add uniqueId for consistency
+            }
             
             // Add assetUSD if assetId exists
             if (asset.assetId) {
               const crypto = cryptocurrencies.find(c => c.id === asset.assetId)
-              if (crypto && crypto.quote && crypto.quote.USD) {
+              if (crypto) {
                 assetWithUSD.assetUSD = crypto.quote.USD.price
+                assetWithUSD.symbol = crypto.symbol.toLowerCase()
+                assetWithUSD.name = crypto.symbol
+                assetWithUSD.fullName = crypto.name
+                assetWithUSD.percent_change_24h = crypto.quote.USD.percent_change_24h
+                
+                // Calculate USD value for this asset in the wallet
+                assetWithUSD.USD = asset.tokens * crypto.quote.USD.price
+                assetWithUSD.price = crypto.quote.USD.price
+                assetWithUSD.percentageShareInUSD = 0 // Will be calculated below
               }
             }
             
             return assetWithUSD
           })
+          
+          // Calculate total portfolio value and percentage shares
+          const totalPortfolioValue = walletWithUSD.balance.reduce((total, asset) => {
+            return total + (asset.USD || 0)
+          }, 0)
+          
+          walletWithUSD.balance.forEach(asset => {
+            if (asset.USD && totalPortfolioValue > 0) {
+              asset.percentageShareInUSD = (asset.USD * 100 / totalPortfolioValue)
+            }
+          })
+          
+          // Sort assets by USD value (highest first)
+          walletWithUSD.balance.sort((a, b) => (b.USD || 0) - (a.USD || 0))
         }
         
         // Add USD prices to transactions
@@ -235,6 +375,7 @@ app.get('/wallet/:id', (req, res) => {
               const crypto = cryptocurrencies.find(c => c.id === transaction.inAssetId)
               if (crypto && crypto.quote && crypto.quote.USD) {
                 transactionWithUSD.inUSDPrice = crypto.quote.USD.price
+                transactionWithUSD.inTokenSymbol = crypto.symbol
               }
             }
             
@@ -243,6 +384,7 @@ app.get('/wallet/:id', (req, res) => {
               const crypto = cryptocurrencies.find(c => c.id === transaction.outAssetId)
               if (crypto && crypto.quote && crypto.quote.USD) {
                 transactionWithUSD.outUSDPrice = crypto.quote.USD.price
+                transactionWithUSD.outTokenSymbol = crypto.symbol
               }
             }
             
@@ -253,7 +395,10 @@ app.get('/wallet/:id', (req, res) => {
         // Add enriched data to proposals to match /proposals endpoint format
         if (walletWithUSD.proposals) {
           walletWithUSD.proposals = walletWithUSD.proposals.map(proposal => {
-            const proposalWithUSD = { ...proposal }
+            const proposalWithUSD = { 
+              ...proposal,
+              uniqueId: uuid.v4() // Add uniqueId for proposals as well
+            }
             
             // Add outUSDPrice if outAssetId exists
             if (proposal.outAssetId) {
